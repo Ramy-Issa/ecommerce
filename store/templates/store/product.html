@@ -1,0 +1,22 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="product-page">
+    <div class="product-image">
+      <img class="img-fluid" src="{{ product.imageURL }}" alt="{{ product.name }}">
+    </div>
+
+    <div class="product-details">
+      <h1>{{ product.name }}</h1>
+      <h2>Price: {{ product.price }}</h2>
+
+      <div class="d-grid gap-2">
+      <button data-product="{{product.id}}" data-action="add" class="btn btn-primary btn-lg update-cart">Add to Cart</button>
+      <a  class="btn btn-secondary btn-lg" href="{% url 'store' %}">&#x2190; Continue Shopping</a>
+
+
+    </div>
+
+    </div>
+  </div>
+{% endblock %}
